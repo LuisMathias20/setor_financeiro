@@ -38,4 +38,14 @@ module.exports = {
         const account = await AccountsReceivable.findByIdAndDelete(req.params.id);
         return res.json({msg:'Excluido com sucesso'});
     },
+
+    async TotalBills(req,res) {
+        const accounts = await AccountsReceivable.find();
+        let legth = accounts.length();
+        let sum = 0;
+        for (let i = 0; i<=length; i++) {
+            sum += accounts.forEach(Array[i]);
+        }
+        return res.json(sum);
+    }
 }
